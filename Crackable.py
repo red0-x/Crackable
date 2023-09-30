@@ -1,17 +1,23 @@
 #Crackable? AI Password Analyzer.
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
-from fastapi import FastAPI, Request
-import uvicorn
 
-app = FastAPI()
+from flask import Flask,render_template, request
 
-templates = Jinja2Templates(directory="templates")
 
-@app.get("/hello/", response_class=HTMLResponse)
+app = Flask(__name__)
 
-async def app(request: Request):
-    return templates.TemplateResponse("Crackable.html", {"request": request})
+@app.route('/', methods =["GET", "POST"])
 
-if __name__ == "__main__":
-    uvicorn.run("Crackable:app", port=5000, log_level="info")
+def CrackableMain(methods=['GET']):
+ if request.method == "POST":
+    form = request.form.get("Password")
+    print(form)
+    return form
+
+ return render_template("Crackable.html")
+
+ 
+
+
+ 
+if __name__ == '__main__':
+   app.run()
