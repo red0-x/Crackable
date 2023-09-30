@@ -84,11 +84,11 @@ def cracktime(crackpassword,hps):
         cracked = cracked / 1000
         time_ = "millennia"
     
-    result2 = ("Based on password cracking at: {:,d} H/s.\n".format(int(crack_speed)))
+   
     
     result1 = ("Time to crack password:   {:,.2f} {}".format(cracked, time_))
     
-    return(str(result1+"   "+result2))
+    return(str(result1))
 
 @app.route('/', methods =["GET", "POST"])
 
