@@ -1,6 +1,8 @@
 from getpass import getpass
 import sys
 import re
+import random 
+
 def cracktime(crackpassword,hps):
     # Analyze the password  and get the time to crack the user's password
     entropy = 0
@@ -84,8 +86,48 @@ def cracktime(crackpassword,hps):
 
 
 
-def GeneratePassword(length):
- chars="QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890!@#$%^&*()~]{[}-+?"
+def GeneratePassword(length,lchars,uchars,nums,symbols):
+ 
+ uuchars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+ llchars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","q","y","z"]
+ nnums = ["1","2","3","4","5","6","7","8","9","0"]
+ ssymbols = ["!","@","$","%","#","*","?","&"]
+ 
+ passwd = []
 
- for element in range(0, len(chars)):
-    print(chars[element])
+ total = []
+
+ if uchars == True:
+
+    total.extend(uuchars)
+    
+
+    
+ if lchars == True:
+
+    total.extend(llchars)
+
+ 
+ if nums == True:
+
+    total.extend(nnums)
+
+    
+ 
+ if symbols == True:
+
+    total.extend(ssymbols)
+    
+ x = [i for i in (total)]
+ random.shuffle(x)
+
+ for i in range(length):
+  
+  passwd += random.choices(x)[0]  
+  passwd = ''.join(list(passwd))
+     
+ return passwd
+
+   
+    
+GeneratePassword(length=11,lchars=True,uchars=True,nums=True,symbols=True)
