@@ -1,10 +1,10 @@
 from getpass import getpass
 import sys
 import re
-
-def cracktime(crackpassword = str, hps = int):
+def cracktime(crackpassword,hps):
+    # Analyze the password  and get the time to crack the user's password
     entropy = 0
-    crack_speed = hps # Default
+    crack_speed = int(hps) # Hashes Per second inputted by user
 
     if len(sys.argv) > 1:
         if sys.argv[1].isdigit():
@@ -21,9 +21,8 @@ def cracktime(crackpassword = str, hps = int):
                 'Numbers': 10}
 
    
-    print("Based on password cracking at: {:,d} MH/s.\n".format(int(crack_speed/1000000))) # Hashes/second to MH/s
 
-    password = crackpassword
+    password = str(crackpassword)
     pass_len = len(password)
 
     for char in password:
@@ -76,8 +75,17 @@ def cracktime(crackpassword = str, hps = int):
     if time_ == "centuries" and cracked > 1000:
         cracked = cracked / 1000
         time_ = "millennia"
-    result2 = ("Based on password cracking at: {:,d} MH/s.\n".format(int(crack_speed/1000000)))
+    
+   
+    
     result1 = ("Time to crack password:   {:,.2f} {}".format(cracked, time_))
-    return(str(result1+"   "+result2))
-result = cracktime(crackpassword="POOPYFACE!", hps=1000000000)
-print(result)
+    
+    return(str(result1))
+
+
+
+def GeneratePassword(length):
+ chars="QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890!@#$%^&*()~]{[}-+?"
+
+ for element in range(0, len(chars)):
+    print(chars[element])
