@@ -92,18 +92,20 @@ class utility:
             if time_ == "days":
                 crackfastt=True
                 print(cracked, time_, crackfastt)
-                return(str("Your Password could be cracked in",cracked, time_,"Which means your password is NOT Secure!"))            
+                return(str(f"Your Password could be cracked in {int(cracked,)} {(time_)} Which means your password is NOT Secure!"))  
+            
             if time_ == "minutes":
                 crackfastt=True
                 print(cracked, time_, crackfastt)
-                return(str("Your Password could be cracked in",cracked, time_,"Which means your password is NOT Secure!"))            
+                return(str(f"Your Password could be cracked in {int(cracked,)} {(time_)} Which means your password is NOT Secure!"))  
+            
             if time_ == "hours":
                 crackfastt=True
                 print(cracked, time_, crackfastt)
-                return(str("Your Password could be cracked in",cracked, time_,"Which means your password is NOT Secure!"))       
+                return(str(f"Your Password could be cracked in {int(cracked,)} {(time_)} Which means your password is NOT Secure!"))   
             else:
-                crackfastt=False
-                return(str("Your Password could be cracked in",cracked, time_,"Which means your password is Secure!"))
+                 crackfastt=False
+                 return(str(f"Your Password could be cracked in {int(cracked,)} {(time_)} Which means your password is Secure!"))  
 
                 
 
@@ -159,5 +161,4 @@ class utility:
             # GeneratePassword(length=11,lchars=True,uchars=True,nums=True,symbols=True)
             # cracktime(crackpassword='asdfasdfaw',hps='1000000000')
 
-c = utility()
-c.cracktime(crackpassword='asdfasdfaw',hps='1000000000')
+

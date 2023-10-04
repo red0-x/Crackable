@@ -13,7 +13,7 @@
 html {
   
   text-align: center;
-  font-family: 'Dela Gothic One',;
+  font-family: 'Dela Gothic One', sans-serif;
   background: linear-gradient(
     45deg,
     rgba(5, 32, 120, 1) 12%,
@@ -25,7 +25,7 @@ html {
 }
 
 .css-input {
-  font-family: 'Dela Gothic One',;
+  font-family: 'Dela Gothic One', sans-serif;
   text-align: center;
   padding: 5px;
   font-size: 16px;
@@ -48,7 +48,7 @@ html {
 }
 
 .btn{
-  font-family: 'Dela Gothic One',;
+  font-family: 'Dela Gothic One', sans-serif;
   text-align: center;
   padding: 5px;
   font-size: 16px;
@@ -81,4 +81,9 @@ html {
   border-radius: 11px;
   box-shadow: 0px 0px 5px rgba(66,66,66,.75);
   text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Dela Gothic One', sans-serif;
 }

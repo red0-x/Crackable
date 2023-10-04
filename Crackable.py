@@ -2,7 +2,7 @@
 
 from flask import Flask,render_template, request
 
-from utils import utility
+from utils import *
 
 
 
@@ -21,8 +21,9 @@ def CrackableMain(methods=['GET']):
     hashes = request.form.get("Hashes")
     u = utility()
    #  u.cracktime(crackpassword=password, hps=hashes)
-     
-    return u.cracktime(crackpassword=password, hps=hashes)
+    response = u.cracktime(crackpassword=password, hps=hashes)
+    print(response)
+    return str(response)
 
 
  return render_template("index.html")
