@@ -88,24 +88,22 @@ class utility:
             
             result1 = ("Time to crack password:   {:,.2f} {}".format(cracked, time_))
             
+            
             if time_ == "days":
                 crackfastt=True
                 print(cracked, time_, crackfastt)
-                return (cracked, time_, crackfastt)
-            
+                return(str("Your Password could be cracked in",cracked, time_,"Which means your password is NOT Secure!"))            
             if time_ == "minutes":
                 crackfastt=True
                 print(cracked, time_, crackfastt)
-                return (cracked, time_, crackfastt)
-            
+                return(str("Your Password could be cracked in",cracked, time_,"Which means your password is NOT Secure!"))            
             if time_ == "hours":
                 crackfastt=True
                 print(cracked, time_, crackfastt)
-                return (cracked, time_, crackfastt)
-            
+                return(str("Your Password could be cracked in",cracked, time_,"Which means your password is NOT Secure!"))       
             else:
                 crackfastt=False
-                return time_,cracked
+                return(str("Your Password could be cracked in",cracked, time_,"Which means your password is Secure!"))
 
                 
 

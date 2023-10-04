@@ -21,35 +21,11 @@ def CrackableMain(methods=['GET']):
     hashes = request.form.get("Hashes")
     u = utility()
    #  u.cracktime(crackpassword=password, hps=hashes)
-    try: 
-     crackfastt,time_,cracked = u.cracktime(crackpassword=password, hps=hashes)
-    except Exception:
-       pass
-    
-    try:
-       crackfastt,time_, = u.cracktime(crackpassword=password, hps=hashes)
-    except Exception:
-     pass
-    
-    try:
-       crackfastt = u.cracktime(crackpassword=password, hps=hashes)
-    except Exception:
-     pass
-    
-    try:
-       time_ = u.cracktime(crackpassword=password, hps=hashes)
-    except Exception:
-     pass
-    
-
-    if crackfastt == False:
-      print("Your Password could be cracked in",cracked, time_,"Which means your password is Secure!")
-    
-    if crackfastt == True:
-      print("Your Password could be cracked in",cracked, time_,"Which means your password is NOT Secure!")
+     
+    return u.cracktime(crackpassword=password, hps=hashes)
 
 
- return render_template("Crackable.html")
+ return render_template("index.html")
 
  
 

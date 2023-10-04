@@ -1,0 +1,84 @@
+/* #maindiv {
+  background: linear-gradient(
+    45deg,
+    rgba(5, 32, 120, 1) 12%,
+    rgba(17, 25, 31, 1) 84%
+  );
+  background-blend-mode: normal;
+  backdrop-filter: blur(undefined);
+  -webkit-backdrop-filter: blur(undefined);
+} */
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+html {
+  
+  text-align: center;
+  font-family: 'Dela Gothic One',;
+  background: linear-gradient(
+    45deg,
+    rgba(5, 32, 120, 1) 12%,
+    rgba(17, 25, 31, 1) 84%
+  );
+  background-blend-mode: normal;
+  backdrop-filter: blur(undefined);
+  -webkit-backdrop-filter: blur(undefined);
+}
+
+.css-input {
+  font-family: 'Dela Gothic One',;
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+  border-width: 1px;
+  border-color: #CCCCCC;
+  background-color:linear-gradient(
+    45deg,
+    rgba(5, 32, 120, 1) 12%,
+    rgba(17, 25, 31, 1) 84%
+  );
+  color: #000000;
+  border-style: solid;
+  border-radius: 9px;
+  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+.css-input:focus {
+
+  outline:none;
+}
+
+.btn{
+  font-family: 'Dela Gothic One',;
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+  border-width: 1px;
+  border-color: #CCCCCC;
+  background-color:linear-gradient(
+    45deg,
+    rgba(5, 32, 120, 1) 12%,
+    rgba(17, 25, 31, 1) 84%
+  );
+  color: #000000;
+  border-style: solid;
+  border-radius: 11px;
+  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+.btn:focus {
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+  border-width: 1px;
+  border-color: #CCCCCC;
+  background-color:linear-gradient(
+    45deg,
+    rgba(5, 32, 120, 1) 12%,
+    rgba(17, 25, 31, 1) 84%
+  );
+  color: #000000;
+  border-style: solid;
+  border-radius: 11px;
+  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
