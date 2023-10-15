@@ -1,4 +1,24 @@
-/* #maindiv {
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+#maindiv {
+ 
+  display: flex;
+  flex-direction: column;
+  font-family: 'Dela Gothic One', sans-serif;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+  width: auto;
+  margin-block: auto;
+  
+
+}
+
+
+
+
+
+html {
   background: linear-gradient(
     45deg,
     rgba(5, 32, 120, 1) 12%,
@@ -7,14 +27,9 @@
   background-blend-mode: normal;
   backdrop-filter: blur(undefined);
   -webkit-backdrop-filter: blur(undefined);
-} */
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-
-html {
-  
   text-align: center;
   font-family: 'Dela Gothic One', sans-serif;
-  background: linear-gradient(
+  background: linear-gradienzt(
     45deg,
     rgba(5, 32, 120, 1) 12%,
     rgba(17, 25, 31, 1) 84%
@@ -31,11 +46,6 @@ html {
   font-size: 16px;
   border-width: 1px;
   border-color: #CCCCCC;
-  background-color:linear-gradient(
-    45deg,
-    rgba(5, 32, 120, 1) 12%,
-    rgba(17, 25, 31, 1) 84%
-  );
   color: #000000;
   border-style: solid;
   border-radius: 9px;
@@ -54,11 +64,6 @@ html {
   font-size: 16px;
   border-width: 1px;
   border-color: #CCCCCC;
-  background-color:linear-gradient(
-    45deg,
-    rgba(5, 32, 120, 1) 12%,
-    rgba(17, 25, 31, 1) 84%
-  );
   color: #000000;
   border-style: solid;
   border-radius: 11px;
@@ -71,11 +76,6 @@ html {
   font-size: 16px;
   border-width: 1px;
   border-color: #CCCCCC;
-  background-color:linear-gradient(
-    45deg,
-    rgba(5, 32, 120, 1) 12%,
-    rgba(17, 25, 31, 1) 84%
-  );
   color: #000000;
   border-style: solid;
   border-radius: 11px;
@@ -86,4 +86,20 @@ html {
 h1 {
   text-align: center;
   font-family: 'Dela Gothic One', sans-serif;
+}
+
+
+#options{
+  color: #000000;
+  border-style: solid;
+  border-radius: 11px;
+  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  color: #000000;
+  border-style: solid;
+  border-radius: 11px;
+  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  font-family: 'Dela Gothic One', sans-serif;
+  padding: 7px;
 }

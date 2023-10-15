@@ -20,7 +20,7 @@ def CrackableMain(methods=['GET']):
     password = request.form.get("Password")
     hashes = request.form.get("Hashes")
     u = utility()
-   #  u.cracktime(crackpassword=password, hps=hashes)
+   #  u.cracktime(crackpassword=password, hps=  hashes)
     response = u.cracktime(crackpassword=password, hps=hashes)
     print(response)
     return str(response)
