@@ -1,8 +1,12 @@
 <head>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 
     <title>Crackable?</title>
+
+
 
 </head>
 
@@ -17,11 +21,11 @@
 
         <br>
 
-        <input placeholder="Enter Cracking H/s" id="Hashes" type="text" name="Hashes" class="css-input"></input>
+        <!-- <input placeholder="Enter Cracking H/s" id="Hashes" type="text" name="Hashes" class="css-input"></input> -->
 
         <br>
 
-        <select id="options" class="options">
+        <select id="options" class="options" name="dropdown">
 
             <option value="50000000">Typical Computer</option>
 
@@ -35,8 +39,15 @@
         </select>
 
 
+
         <br>
         <button type="submit" class="btn">Crackable?</button>
+
+    </form>
+
+    <form action="{{ url_for('CrackableMain') }}" method="post">
+
+        <button class="css-input" type="submit" value='True' name="modea">Advanced Mode</button>
 
     </form>
 
