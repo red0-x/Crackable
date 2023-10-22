@@ -6,6 +6,7 @@ from utils import *
 
 
 
+
 app = Flask(__name__)
 
 
@@ -19,20 +20,34 @@ def CrackableMain(methods=['GET']):
     password = request.form.get("Password")
     hashes = request.form.get("dropdown")
     
-    modea = request.form.get("modea")
-    print(modea)
-    if modea == 'True':
-      redirect('/advanced')
-    else:
-    
-      u = utility()
+   
+ 
+
+    u = utility()
+
       #  u.cracktime(crackpassword=password, hps=  hashes)
-      response = u.cracktime(crackpassword=password, hps=hashes)
-      print(response)
-      return str(response)
+    response = u.cracktime(crackpassword=password, hps=hashes)
+    print(response)
+    return str(response)
   
  
  return render_template("index.html")
+
+
+@app.route('/password-generator', methods =["GET", "POST"])
+
+def PasswordGen():
+   if request.method == "POST":
+    length = request.form.get("lenght")
+    lchars = request.form.get("lchars")
+    uchars = request.form.get("uchars")
+    nums = request.form.get("nums")
+    symbols = request.form.get("symbols")
+    
+    password = utility.GeneratePassword(length=length,lchars=lchars,uchars=uchars,nums=nums,symbols=symbols)
+    return password
+
+    
 
  
 

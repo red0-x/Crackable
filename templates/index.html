@@ -4,7 +4,7 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 
-    <title>Crackable?</title>
+    <title>Crackable? | Main</title>
 
 
 
@@ -13,7 +13,9 @@
 
 <div id="maindiv">
 
+
     <h1>Crackable?</h1>
+    <h3>Main</h3>
 
     <form action="{{ url_for('CrackableMain') }}" method="post">
 
@@ -45,10 +47,16 @@
 
     </form>
 
-    <form action="{{ url_for('CrackableMain') }}" method="post">
+    <form action="{{ url_for('CrackableMain') }}" method="get">
 
-        <button class="css-input" type="submit" value='True' name="modea">Advanced Mode</button>
+        
+        <a href="{{ url_for('Advanced') }}" class="css-input">Advanced Mode</a>
 
     </form>
+    <div>
+        <h2>How It Works</h2>
+        <p>Crackable works by analyzing your password and it calculates how long it would take to crack a hash which hides encrypts your password on a login page</p>
+
+    </div>
 
 </div id='maindiv'>

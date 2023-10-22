@@ -8,10 +8,15 @@ class utility:
     def __init__(self) -> None:
          pass
 
+    
+    
+
 
     def cracktime(self,crackpassword,hps):
+            
             # Analyze the password  and get the time to crack the user's password
             entropy = 0
+           
             crack_speed = int(hps) # Hashes Per second inputted by user
 
             if len(sys.argv) > 1:
@@ -31,6 +36,7 @@ class utility:
         
 
             password = str(crackpassword)
+          
             pass_len = len(password)
 
             for char in password:
@@ -97,16 +103,15 @@ class utility:
             if time_ == "minutes":
                 crackfastt=True
                 print(cracked, time_, crackfastt)
-                return(str(f"Your Password could be cracked in {int(cracked,)} {(time_)} Which means your password is NOT Secure!"))  
+                return(str(f"{int(cracked,)} {(time_)} {crackfastt}"))  
             
             if time_ == "hours":
                 crackfastt=True
                 print(cracked, time_, crackfastt)
-                return(str(f"Your Password could be cracked in {int(cracked,)} {(time_)} Which means your password is NOT Secure!"))   
+                return(str(f"{int(cracked,)} {(time_)} {crackfastt}"))
             else:
                  crackfastt=False
-                 return(str(f"Your Password could be cracked in {int(cracked,)} {(time_)} Which means your password is Secure!"))  
-
+                 return(str(f"{int(cracked,)} {(time_)} {crackfastt}"))
                 
 
 

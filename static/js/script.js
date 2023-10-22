@@ -1,4 +1,4 @@
 
 function redir(){
-    return true
+    return 'True'
 }
