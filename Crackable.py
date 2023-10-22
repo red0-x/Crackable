@@ -27,8 +27,24 @@ def CrackableMain(methods=['GET']):
 
       #  u.cracktime(crackpassword=password, hps=  hashes)
     response = u.cracktime(crackpassword=password, hps=hashes)
-    print(response)
-    return str(response)
+    parsed = response.split(" ")
+    cracked = parsed[0]
+    time = parsed[1]
+    try:
+     crackfast = parsed[3]
+    except Exception:
+      print('no crackfast! password insecure!')
+
+    
+    if (response):
+     print(response)
+    crackable = (f'Crackable! Your password could be cracked in {cracked} {time}! I recommend generating new password!')
+    secure = (f'Good Job! Your password is secure and could be cracked in {cracked} {time}!')
+    if crackfast == 'True':
+      return(f'Crackable! Your password could be cracked in {cracked} {time}! I recommend generating new password!')
+    else:
+      return(f'Good Job! Your password is secure and could be cracked in {cracked} {time}!')
+
   
  
  return render_template("index.html")

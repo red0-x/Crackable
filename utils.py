@@ -98,7 +98,7 @@ class utility:
             if time_ == "days":
                 crackfastt=True
                 print(cracked, time_, crackfastt)
-                return(str(f"Your Password could be cracked in {int(cracked,)} {(time_)} Which means your password is NOT Secure!"))  
+                return(str(f"{int(cracked,)} {(time_)} {crackfastt}"))   
             
             if time_ == "minutes":
                 crackfastt=True
