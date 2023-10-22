@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 
 #maindiv {
  
@@ -102,4 +102,83 @@ h1 {
   text-shadow: 0px 0px 5px rgba(66,66,66,.75);
   font-family: 'Dela Gothic One', sans-serif;
   padding: 7px;
+} */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+* {
+  margin: 10px; /* Adjust the margin value as needed */
+}
+
+#maindiv {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Dela Gothic One', sans-serif;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+  width: auto;
+  margin-block: auto;
+}
+
+html {
+  background: linear-gradient(
+    45deg,
+    rgba(5, 32, 120, 1) 12%,
+    rgba(17, 25, 31, 1) 84%
+  );
+  background-blend-mode: normal;
+  backdrop-filter: blur(undefined);
+  -webkit-backdrop-filter: blur(undefined);
+  text-align: center;
+  font-family: 'Dela Gothic One', sans-serif;
+}
+
+.css-input {
+  font-family: 'Dela Gothic One', sans-serif;
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #CCCCCC;
+  color: #000000;
+  border-radius: 9px;
+  box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+  text-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+}
+.css-input:focus {
+  outline: none;
+}
+
+.btn {
+  font-family: 'Dela Gothic One', sans-serif;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #0077FF;
+  color: #FFFFFF;
+  border-radius: 11px;
+  box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+  cursor: pointer;
+}
+.btn:focus {
+  outline: none;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Dela Gothic One', sans-serif;
+}
+
+#options {
+  font-family: 'Dela Gothic One', sans-serif;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #0077FF;
+  color: #FFFFFF;
+  border-radius: 11px;
+  box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+  cursor: pointer;
 }

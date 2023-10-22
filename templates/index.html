@@ -1,4 +1,4 @@
-<head>
+<!-- <head>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
@@ -9,23 +9,23 @@
 
 
 </head>
-
-
+ -->
+<!-- 
 <div id="maindiv">
 
 
     <h1>Crackable?</h1>
-    <h3>Main</h3>
+    <h3>Main</h3> -->
 
-    <form action="{{ url_for('CrackableMain') }}" method="post">
+    <!-- <form action="{{ url_for('CrackableMain') }}" method="post">
 
         <input placeholder="Password" id="Password" type="text" name="Password" class="css-input"></input>
 
         <br>
 
-        <!-- <input placeholder="Enter Cracking H/s" id="Hashes" type="text" name="Hashes" class="css-input"></input> -->
+         <input placeholder="Enter Cracking H/s" id="Hashes" type="text" name="Hashes" class="css-input"></input> -->
 
-        <br>
+        <!-- <br>
 
         <select id="options" class="options" name="dropdown">
 
@@ -38,25 +38,66 @@
             <option value="110000000000000">Bitcoin Miner</option>
 
             <br>
-        </select>
+        </select> -->
 
 
 
-        <br>
-        <button type="submit" class="btn">Crackable?</button>
+        <!-- <br>
+        <button type="submit" class="btn">Crackable?</button> 
 
-    </form>
+    </form>  -->
 
-    <form action="{{ url_for('CrackableMain') }}" method="get">
+    <!-- <form action="{{ url_for('CrackableMain') }}" method="get">
 
         
-        <a href="{{ url_for('Advanced') }}" class="css-input">Advanced Mode</a>
+        <a href="{{ url_for('Advanced') }}" class="btn">Advanced Mode</a>
 
-    </form>
-    <div>
+    </form> -->
+    <!-- <div>
         <h2>How It Works</h2>
         <p>Crackable works by analyzing your password and it calculates how long it would take to crack a hash which hides encrypts your password on a login page</p>
 
-    </div>
+    </div> -->
 
-</div id='maindiv'>
+<!-- </div id='maindiv'> -->
+
+
+
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <title>Crackable? | Main</title>
+</head>
+
+<div id="maindiv">
+    <h1>Crackable?</h1>
+    <h3>Main</h3>
+
+    <form action="{{ url_for('CrackableMain') }}" method="post">
+        <input placeholder="Password" id="Password" type="text" name="Password" class="css-input"></input>
+        <br>
+
+        <!-- <input placeholder="Enter Cracking H/s" id="Hashes" type="text" name="Hashes" class="css-input"></input> -->
+        <br>
+
+        <select id="options" class="options" name="dropdown">
+            <option value="50000000">Typical Computer</option>
+            <option value="2610000000000">Supercomputer</option>
+            <option value="110000000000000">Cracking Computer</option>
+            <option value="110000000000000">Bitcoin Miner</option>
+        </select>
+        <br>
+
+        <button type="submit" class="btn">Crackable?</button>
+    </form>
+
+    <form action="{{ url_for('CrackableMain') }}" method="get">
+        <a href="{{ url_for('Advanced') }}" class="btn">Advanced Mode</a>
+    </form>
+
+    <div>
+        <h2>How It Works</h2>
+        <p>Crackable works by analyzing your password and calculates how long it would take to crack a hash, which hides and encrypts your password on a login page.</p>
+    </div>
+</div>

@@ -1,32 +1,20 @@
+<!DOCTYPE html>
+<html>
 <head>
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
-
-    <title>Crackable? | Secure</title>
-
-
-
+    <title>Crackable? | Main</title>
 </head>
 
+<body>
+    <div id="maindiv">
+        <h1>Crackable?</h1>
+        <p>{{response}}</p>
+        <a href="{{ url_for('PasswordGen') }}" class="btn">Generate a New Password</a>
+        <a href="{{ url_for('CrackableMain') }}" class="btn">Back</a>
 
-<div id="maindiv">
-
-
-    <h1>Crackable?</h1>
-
-    <h2></h2>
-      
-
-        
-    <a href="{{ url_for('CrackableMain') }}" class="css-input">Back</a>
-
-    
-    <div>
         <h2>How It Works</h2>
-        <p>Crackable works by analyzing your password and it calculates how long it would take to crack a hash which hides encrypts your password on a login page</p>
-
+        <p>Crackable operates by analyzing your password and determining the time it would take to break a hash. This hash serves to encrypt your password when it's used on a login page, enhancing security and protecting your sensitive information.</p>
     </div>
-
-</div id='maindiv'>
+</body>
+</html>
