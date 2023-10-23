@@ -119,7 +119,7 @@ class utility:
             
 
 
-    def GeneratePassword(length,lchars,uchars,nums,symbols,self):
+    def GeneratePassword(passwordlength,lchars,uchars,nums,symbols):
             
             uuchars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
             llchars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","q","y","z"]
@@ -154,7 +154,7 @@ class utility:
             x = [i for i in (total)]
             random.shuffle(x)
 
-            for i in range(length):
+            for i in range(passwordlength):
             
                 passwd += random.choices(x)[0]  
                 passwd = ''.join(list(passwd))

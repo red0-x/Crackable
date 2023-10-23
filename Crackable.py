@@ -239,17 +239,17 @@ def CrackableMain():
 @app.route('/password-generator', methods=["POST", "GET"])
 def PasswordGen():
     if request.method == "POST":
-        length = int(request.form['length'])
+        passwordlength = int(request.form['length'])
         lchars = 'lchars' in request.form
         uchars = 'uchars' in request.form
         nums = 'nums' in request.form
         symbols = 'symbols' in request.form
+        print(passwordlength)
 
-        if length < 1:
+        if passwordlength < 1:
             return render_template('password-generator.html', error="Invalid input. Please enter a valid length.")
-        u = utility()
-        u.GeneratePassword()
-        generated_password = u.GeneratePassword(length, lchars, uchars, nums, symbols)
+        
+        generated_password = utility.GeneratePassword(passwordlength=int(passwordlength), lchars=lchars, uchars=uchars, nums=nums, symbols=symbols)
         return render_template('password-generator.html', password=generated_password)
     else:
         return render_template('password-generator.html')
