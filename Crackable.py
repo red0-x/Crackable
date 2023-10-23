@@ -1,14 +1,13 @@
 from flask import Flask, render_template, request, redirect, flash
 import os
-import utils 
-from utils import *
 from dotenv import load_dotenv
+from utils import utility
+
 load_dotenv()
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 app = Flask(__name__)
 app.secret_key = SECRET_KEY
-
 
 @app.route('/', methods=["GET", "POST"])
 def CrackableMain():
@@ -29,9 +28,8 @@ def CrackableMain():
         except ValueError:
             flash("Invalid input. Please select a valid hash type.", 'error')
             return redirect(request.url)
-    return render_template('index.html')    
 
-        # Your existing code continues...
+    return render_template('index.html')
 
 @app.route('/password-generator', methods=["POST", "GET"])
 def PasswordGen():
@@ -49,14 +47,6 @@ def PasswordGen():
         generated_password = utility.GeneratePassword(passwordlength=passwordlength, lchars=lchars, uchars=uchars, nums=nums, symbols=symbols)
         flash("Password generated successfully!", 'success')
         return render_template('password-generator.html', output=generated_password)
-    
-
-    # Your existing code continues...
-
-if __name__ == '__main__':
-    app.run()
-
-
 
 @app.route('/Advanced', methods=["GET", "POST"])
 def Advanced():
@@ -77,4 +67,8 @@ def Advanced():
         except ValueError:
             flash("Invalid input. Please select a valid hash type.", 'error')
             return redirect(request.url)
-    return render_template('advanced.html')    
+
+    return render_template('advanced.html')
+
+if __name__ == '__main__':
+    app.run()
