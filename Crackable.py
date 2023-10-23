@@ -248,6 +248,7 @@ def PasswordGen():
         if length < 1:
             return render_template('password-generator.html', error="Invalid input. Please enter a valid length.")
         u = utility()
+        u.GeneratePassword()
         generated_password = u.GeneratePassword(length, lchars, uchars, nums, symbols)
         return render_template('password-generator.html', password=generated_password)
     else:
