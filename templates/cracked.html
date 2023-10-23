@@ -9,7 +9,19 @@
 <body>
     <div id="maindiv">
         <h1>Crackable?</h1>
-        <p>{{response}}</p>
+        <p>{{ response }}</p>
+        
+        <!-- Display Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
         <a href="{{ url_for('PasswordGen') }}" class="btn">Generate a New Password</a>
         <a href="{{ url_for('CrackableMain') }}" class="btn">Back</a>
 

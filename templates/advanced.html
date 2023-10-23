@@ -1,51 +1,40 @@
 <head>
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-
     <title>Crackable? | Advanced</title>
-    
-
-
 </head>
 
-
 <div id="maindiv">
-
     <h1>Crackable?</h1>
     <h3>Advanced</h3>
 
     <form action="{{ url_for('CrackableMain') }}" method="post">
-
         <input placeholder="Password" id="Password" type="text" name="Password" class="css-input"></input>
-
         <br>
 
         <input placeholder="Enter Cracking H/s" id="Hashes" type="text" name="Hashes" class="css-input"></input>
-
         <br>
+        
+        <!-- Display Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith -->
 
-
-
-        <br>
         <button type="submit" class="btn">Crackable?</button>
-        <a href="{{ url_for('CrackableMain') }}" class="btn" >Back</a>
-
+        <a href="{{ url_for('CrackableMain') }}" class="btn">Back</a>
     </form>
 
-
-
     <form action="{{ url_for('PasswordGen') }}" method="post">
-
-
 
     </form>
 
     <div>
         <h2>How It Works</h2>
-        <p>Crackable works by analyzing your password and it calculates how long it would take to crack a hash which hides encrypts your password on a login page</p>
-
+        <p>Crackable works by analyzing your password and calculates how long it would take to crack a hash, which hides and encrypts your password on a login page.</p>
     </div>
-
-    
-</div id='maindiv'>
+</div>
