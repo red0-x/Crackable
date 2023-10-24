@@ -19,8 +19,8 @@
         </ul>
         {% endif %}
         {% endwith %}
-        <a href="{{ url_for('PasswordGen') }}" class="btn">Generate a New Password</a>
-        <a href="{{ url_for('CrackableMain') }}" class="btn">Back</a>
+        <a href="{{ url_for('password_gen') }}" class="btn">Generate a New Password</a>
+        <a href="{{ url_for('crackable_main') }}" class="btn">Back</a>
 
         <h2>How It Works</h2>
         <p>Crackable operates by analyzing your password and determining the time it would take to break a hash. This hash serves to encrypt your password when it's used on a login page, enhancing security and protecting your sensitive information.</p>

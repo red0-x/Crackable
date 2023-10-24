@@ -7,11 +7,11 @@
     <h1>Crackable?</h1>
     <h3>Advanced</h3>
 
-    <form action="{{ url_for('CrackableMain') }}" method="post">
-        <input placeholder="Password" id="Password" type="text" name="Password" class="css-input"></input>
+    <form action="{{ url_for('crackable_main') }}" method="post">
+        <input placeholder="Password" id="Password" type="text" name="Password" class="css-input">
         <br>
 
-        <input placeholder="Enter Cracking H/s" id="Hashes" type="text" name="Hashes" class="css-input"></input>
+        <input placeholder="Enter Cracking H/s" id="Hashes" type="text" name="Hashes" class="css-input">
         <br>
         
         <!-- Display Flash Messages -->
@@ -26,10 +26,10 @@
         {% endwith -->
 
         <button type="submit" class="btn">Crackable?</button>
-        <a href="{{ url_for('CrackableMain') }}" class="btn">Back</a>
+        <a href="{{ url_for('crackable_main') }}" class="btn">Back</a>
     </form>
 
-    <form action="{{ url_for('PasswordGen') }}" method="post">
+    <form action="{{ url_for('password_gen') }}" method="post">
 
     </form>
 

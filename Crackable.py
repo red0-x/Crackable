@@ -11,12 +11,14 @@ app.secret_key = SECRET_KEY
 
 @app.route('/', methods=['GET', 'POST'])
 def crackable_main():
+   try:
     if request.method == "POST":
         password = request.form.get("Password")
         hashes = request.form.get("Dropdown")
 
-        u = utility()  # You need to have the utility class defined
-        response = u.cracktime(crackpassword=password, hps=hashes)
+
+        u = utility()  # Make sure 'utility' is correctly defined
+        response = u.cracktime(crackpassword=password, hps=int(hashes))
         parsed = response.split(" ")
         cracked = parsed[0]
         time = parsed[1]
@@ -37,58 +39,71 @@ def crackable_main():
             return render_template('cracked.html', response=f'Crackable! Your password could be cracked in {cracked} {time}! I recommend generating a new password!')
 
     return render_template("index.html")
-
+   
+   except Exception:
+        
+         flash("You Entered a Invalid Input, Try Again")
+         return render_template('index.html') 
+      
 @app.route('/password-generator', methods=["POST", "GET"])
 def password_gen():
-    if request.method == "POST":
-        password_length = int(request.form['length'])
-        lchars = 'lchars' in request.form
-        uchars = 'uchars' in request.form
-        nums = 'nums' in request.form
-        symbols = 'symbols' in request.form
 
-        if password_length < 1:
-            flash("Invalid input. Please enter a valid length.", 'error')
+    try:
+        if request.method == "POST":
+            length = int(request.form['length'])
+            lchars = 'lchars' in request.form
+            uchars = 'uchars' in request.form
+            nums = 'nums' in request.form
+            symbols = 'symbols' in request.form
+
+            if length < 1:
+                return render_template('password-generator.html', error="Invalid input. Please enter a valid length.")
+
+            generated_password = utility.GeneratePassword(length, lchars, uchars, nums, symbols)
+            return render_template('password-generator.html', password=generated_password)
+        else:
             return render_template('password-generator.html')
+    except Exception:    
+     flash("You Entered a Invalid Input, Try Again")
+     return render_template('password-generator.html')
 
-        generated_password = utility.GeneratePassword(password_length, lchars, uchars, nums, symbols)
-        flash("Password generated successfully!", 'success')
-        return render_template('password-generator.html', output=generated_password)
 
-@app.route('/Advanced', methods=["GET", "POST"])
+@app.route('/advanced', methods=["GET", "POST"])
+
 def advanced():
+  try: 
     if request.method == "POST":
         password = request.form.get("Password")
-        hashes = request.form.get("Dropdown")
-        if "Hashes" not in request.form:
-            print('NO Hashes!')
-            hashes = None
 
-        u = utility()
-        response = u.cracktime(crackpassword=password, hps=hashes)
+       
+        hashes = request.form.get("Hashes")
+
+        u = utility()  # Make sure 'utility' is correctly defined
+        response = u.cracktime(crackpassword=password, hps=int(hashes))
         parsed = response.split(" ")
         cracked = parsed[0]
         time = parsed[1]
-        crackfast = None  # Initialize crackfast
+        crackfast = None
 
         if len(parsed) > 2:
             try:
                 crackfast = parsed[2]
-            except Exception:
-                print('no crackfast! password insecure')
+
+            except ValueError:
+                app.logger.error('No crackfast! Password insecure')
 
         if response:
-            print(response)
-
-        crackable = f'Crackable! Your password could be cracked in {cracked} {time}! I recommend generating a new password!'
-        secure = f'Good Job! Your password is secure and could be cracked in {cracked} {time}!'
+            app.logger.info(response)
 
         if crackfast is None:
-            return render_template('secure.html', response=secure)
+            return render_template('secure.html', response=f'Good Job! Your password is secure and could be cracked in {cracked} {time}!')
         else:
-            return render_template('cracked.html', response=crackable)
-
+            return render_template('cracked.html', response=f'Crackable! Your password could be cracked in {cracked} {time}! I recommend generating a new password!')
     return render_template("advanced.html")
+
+  except Exception:
+         flash("You Entered a Invalid Input, Try Again")
+         return render_template('advanced.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -7,46 +7,48 @@
     <title>Crackable? | Main</title>
 </head>
 
-<div id="maindiv">
-    <h1>Crackable?</h1>
-    <h3>Main</h3>
+<body>
+    <div id="maindiv">
+        <h1>Crackable?</h1>
+        <h3>Main</h3>
 
-    <!-- Display Flash Messages -->
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul class="flashes">
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
+        <!-- Display Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
 
-    <form action="{{ url_for('CrackableMain') }}" method="post">
-        <input placeholder="Password" id="Password" type="text" name="Password" class="css-input"></input>
-        <br>
+        <form action="{{ url_for('crackable_main') }}" method="post">
+            <input type="text" name="Password" placeholder="Password" class="css-input">
+            <br>
+
+            <select name="Dropdown" class="options" id="options">
+                <option value="50000000">Typical Computer</option>
+                <option value="2610000000000">Supercomputer</option>
+                <option value="110000000000000">Cracking Computer</option>
+                <option value="120000000000000">Bitcoin Miner</option>
+            </select>
+            <br>
+
+            <button type="submit" class="btn">Crackable?</button>
+        </form>
 
 
+        <form action="{{ url_for('advanced') }}" method="get">
+            <button type="submit" class="btn">Advanced Mode</button>
+        </form>
 
-        <select id="options" class="options" name="Dropdown">
-            <option value="50000000">Typical Computer</option>
-            <option value="2610000000000">Supercomputer</option>
-            <option value="110000000000000">Cracking Computer</option>
-            <option value="110000000000000">Bitcoin Miner</option>
-        </select>
-        <br>
 
-        <button type="submit" class="btn">Crackable?</button>
-    </form>
-
-    <form action="{{ url_for('CrackableMain') }}" method="get">
-        <a href="{{ url_for('Advanced') }}" class="btn">Advanced Mode</a>
-    </form>
-
-    <div>
-        <h2>How It Works</h2>
-        <p>Crackable works by analyzing your password and calculates how long it would take to crack a hash, which hides and encrypts your password on a login page.</p>
+        <div>
+            <h2>How It Works</h2>
+            <p>Crackable works by analyzing your password and calculates how long it would take to crack a hash, which hides and encrypts your password on a login page.</p>
+        </div>
     </div>
-</div>
+</body>
 
 </html>
