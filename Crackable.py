@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, flash
 import os
 from utils import utility  # Import the utility class or module
 from dotenv import load_dotenv
+
 load_dotenv()
 
 SECRET_KEY = os.getenv('SECRET_KEY')
@@ -9,7 +10,7 @@ app = Flask(__name__)
 app.secret_key = SECRET_KEY
 
 @app.route('/', methods=['GET', 'POST'])
-def CrackableMain():
+def crackable_main():
     if request.method == "POST":
         password = request.form.get("Password")
         hashes = request.form.get("Dropdown")
@@ -37,29 +38,25 @@ def CrackableMain():
 
     return render_template("index.html")
 
-
 @app.route('/password-generator', methods=["POST", "GET"])
-
-def PasswordGen():
+def password_gen():
     if request.method == "POST":
-        passwordlength = int(request.form['length'])
+        password_length = int(request.form['length'])
         lchars = 'lchars' in request.form
         uchars = 'uchars' in request.form
         nums = 'nums' in request.form
         symbols = 'symbols' in request.form
 
-        if passwordlength < 1:
+        if password_length < 1:
             flash("Invalid input. Please enter a valid length.", 'error')
             return render_template('password-generator.html')
 
-        generated_password = utility.GeneratePassword(passwordlength, lchars, uchars, nums, symbols)
+        generated_password = utility.GeneratePassword(password_length, lchars, uchars, nums, symbols)
         flash("Password generated successfully!", 'success')
         return render_template('password-generator.html', output=generated_password)
 
-
 @app.route('/Advanced', methods=["GET", "POST"])
-
-def Advanced():
+def advanced():
     if request.method == "POST":
         password = request.form.get("Password")
         hashes = request.form.get("Dropdown")
@@ -82,7 +79,7 @@ def Advanced():
 
         if response:
             print(response)
-        
+
         crackable = f'Crackable! Your password could be cracked in {cracked} {time}! I recommend generating a new password!'
         secure = f'Good Job! Your password is secure and could be cracked in {cracked} {time}!'
 
@@ -93,9 +90,5 @@ def Advanced():
 
     return render_template("advanced.html")
 
-
-
-app.debug = True
-
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
