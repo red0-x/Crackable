@@ -26,6 +26,7 @@ html {
   -webkit-backdrop-filter: blur(undefined);
   text-align: center;
   font-family: 'Dela Gothic One', sans-serif;
+  color: #FFFFFF;
 }
 
 .css-input {
@@ -62,6 +63,30 @@ html {
 h1 {
   text-align: center;
   font-family: 'Dela Gothic One', sans-serif;
+}
+
+.brand-box {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 12px 32px;
+  width: fit-content;
+  margin: 0 auto 8px;
+}
+
+.site-header {
+  width: 100%;
+  padding-bottom: 24px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 24px;
+}
+
+.info-block {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px 32px;
+  max-width: 480px;
 }
 
 #options {
