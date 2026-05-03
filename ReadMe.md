@@ -1,6 +1,9 @@
 # Crackable
-
 A webapp for evalulating password security by calculating the estimated time needed to crack a password using brute force attacks.
+
+<img width="550" height="450" alt="crackable" src="https://github.com/user-attachments/assets/85a26222-dd10-4d58-9021-381739ed0ec0" />
+
+
 
 ## About
 
