@@ -133,6 +133,7 @@ html {
   -webkit-backdrop-filter: blur(undefined);
   text-align: center;
   font-family: 'Dela Gothic One', sans-serif;
+  color: #FFFFFF;
 }
 
 .css-input {
